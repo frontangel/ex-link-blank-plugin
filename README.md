@@ -1,4 +1,4 @@
-# Adding open links to external links in a new window  (jquery)
+# Adding open links to external links in a new window  (js)
 
 ### Installation
 ```sh
