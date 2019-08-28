@@ -1,20 +1,10 @@
-# Adding open links to external links in a new window  (js)
+# Open external links in a new window  (js)
 
-### Installation
-```sh
-$ npm i
+### How it work:
+```html
+<a href="#external-link">link text</a> 
 ```
-
-### Build
-
-Production Build:
-```sh
-$ gulp build
+transform to
+```html
+<a href="#external-link" target="_blank">link text</a>
 ```
-
-Production build + Webserver + Watch:
-```sh
-$ gulp
-```
-
-
