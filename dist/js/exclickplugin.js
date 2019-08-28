@@ -1,23 +1,14 @@
 (function($) {
-    $('a').each(function(){
-        let domainName = extractHostname(this.href)
-        if(domainName !== 'inventure.com.ua') $(this).attr('target', '_blank')
+    $('a').each(function(e){
+        if(extractHostname(this.href) !== window.location.hostname) $(this).attr('target', '_blank')
     })
 })(jQuery)
 
 function extractHostname(url) {
-    var hostname;
-    //find & remove protocol (http, ftp, etc.) and get hostname
-    if (url.indexOf("//") > -1) {
-        hostname = url.split('/')[2];
-    }
-    else {
-        hostname = url.split('/')[0];
-    }
-    //find & remove port number
-    hostname = hostname.split(':')[0];
-    //find & remove "?"
-    hostname = hostname.split('?')[0];
-    return hostname;
+    let hostname = ''
+    url.indexOf("//") > -1 ? hostname = url.split('/')[2] : hostname = url.split('/')[0]
+    hostname = hostname.split(':')[0]
+    hostname = hostname.split('?')[0]
+    return hostname
 }
-//# sourceMappingURL=data:application/json;charset=utf8;base64,eyJ2ZXJzaW9uIjozLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiIiwic291cmNlcyI6WyJleGNsaWNrcGx1Z2luLmpzIl0sInNvdXJjZXNDb250ZW50IjpbIihmdW5jdGlvbigkKSB7XG4gICAgJCgnYScpLmVhY2goZnVuY3Rpb24oKXtcbiAgICAgICAgbGV0IGRvbWFpbk5hbWUgPSBleHRyYWN0SG9zdG5hbWUodGhpcy5ocmVmKVxuICAgICAgICBpZihkb21haW5OYW1lICE9PSAnaW52ZW50dXJlLmNvbS51YScpICQodGhpcykuYXR0cigndGFyZ2V0JywgJ19ibGFuaycpXG4gICAgfSlcbn0pKGpRdWVyeSlcblxuZnVuY3Rpb24gZXh0cmFjdEhvc3RuYW1lKHVybCkge1xuICAgIHZhciBob3N0bmFtZTtcbiAgICAvL2ZpbmQgJiByZW1vdmUgcHJvdG9jb2wgKGh0dHAsIGZ0cCwgZXRjLikgYW5kIGdldCBob3N0bmFtZVxuICAgIGlmICh1cmwuaW5kZXhPZihcIi8vXCIpID4gLTEpIHtcbiAgICAgICAgaG9zdG5hbWUgPSB1cmwuc3BsaXQoJy8nKVsyXTtcbiAgICB9XG4gICAgZWxzZSB7XG4gICAgICAgIGhvc3RuYW1lID0gdXJsLnNwbGl0KCcvJylbMF07XG4gICAgfVxuICAgIC8vZmluZCAmIHJlbW92ZSBwb3J0IG51bWJlclxuICAgIGhvc3RuYW1lID0gaG9zdG5hbWUuc3BsaXQoJzonKVswXTtcbiAgICAvL2ZpbmQgJiByZW1vdmUgXCI/XCJcbiAgICBob3N0bmFtZSA9IGhvc3RuYW1lLnNwbGl0KCc/JylbMF07XG4gICAgcmV0dXJuIGhvc3RuYW1lO1xufSJdLCJmaWxlIjoiZXhjbGlja3BsdWdpbi5qcyJ9
+//# sourceMappingURL=data:application/json;charset=utf8;base64,eyJ2ZXJzaW9uIjozLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiIiwic291cmNlcyI6WyJleGNsaWNrcGx1Z2luLmpzIl0sInNvdXJjZXNDb250ZW50IjpbIihmdW5jdGlvbigkKSB7XG4gICAgJCgnYScpLmVhY2goZnVuY3Rpb24oZSl7XG4gICAgICAgIGlmKGV4dHJhY3RIb3N0bmFtZSh0aGlzLmhyZWYpICE9PSB3aW5kb3cubG9jYXRpb24uaG9zdG5hbWUpICQodGhpcykuYXR0cigndGFyZ2V0JywgJ19ibGFuaycpXG4gICAgfSlcbn0pKGpRdWVyeSlcblxuZnVuY3Rpb24gZXh0cmFjdEhvc3RuYW1lKHVybCkge1xuICAgIGxldCBob3N0bmFtZSA9ICcnXG4gICAgdXJsLmluZGV4T2YoXCIvL1wiKSA+IC0xID8gaG9zdG5hbWUgPSB1cmwuc3BsaXQoJy8nKVsyXSA6IGhvc3RuYW1lID0gdXJsLnNwbGl0KCcvJylbMF1cbiAgICBob3N0bmFtZSA9IGhvc3RuYW1lLnNwbGl0KCc6JylbMF1cbiAgICBob3N0bmFtZSA9IGhvc3RuYW1lLnNwbGl0KCc/JylbMF1cbiAgICByZXR1cm4gaG9zdG5hbWVcbn0iXSwiZmlsZSI6ImV4Y2xpY2twbHVnaW4uanMifQ==
