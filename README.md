@@ -1,4 +1,4 @@
-# Social share plugin (jquery)
+# Adding open links to external links in a new window  (jquery)
 
 ### Installation
 ```sh
